@@ -1,13 +1,15 @@
 import duckdb
 
-duckdb.connect("../data/db.duckdb")
+conn = duckdb.connect("../data/db.duckdb")
 
 
-duckdb.sql("""
+conn.execute("""
            create or replace table events as
            select * from '../data/*.csv'
            """)
 
-duckdb.sql("""
+conn.execute("""
            copy events to '../data/events.parquet'
            """)
+
+conn.close()
