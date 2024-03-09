@@ -1,0 +1,6 @@
+ 2024-03-09 20:37:53 | INFO | utils:wrapper:54 | Chamando função extract com argumentos: ('mkechinov/ecommerce-events-history-in-cosmetics-shop', '../data/'), kwargs: {} utils.py
+ 2024-03-09 20:39:00 | INFO | utils:wrapper:54 | Função extract retornou: 0 utils.py
+ 2024-03-09 20:39:00 | INFO | utils:wrapper:56 | Função extract demorou 66.49945425987244 segundos para ser executada utils.py
+ 2024-03-09 20:39:00 | INFO | main:<module>:10 | Chamando função unite_pl com argumentos: ('../data/',), kwargs: {} main.py
+ 2024-03-09 20:39:26 | INFO | utils:wrapper:56 | Função unite_pl demorou 25.65886664390564 segundos para ser executada utils.py
+ 2024-03-09 20:39:26 | INFO | main:<module>:10 | Função unite_pl retornou: None main.py

@@ -1,3 +1,0 @@
- 2024-03-09 18:59:33 | INFO | utils:wrapper:54 | Chamando função test com argumentos: (), kwargs: {} utils.py
- 2024-03-09 18:59:33 | INFO | utils:wrapper:54 | Função test retornou: None utils.py
- 2024-03-09 18:59:33 | INFO | utils:wrapper:56 | Função test demorou 0.001963376998901367 segundos para ser executada utils.py

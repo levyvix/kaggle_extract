@@ -13,14 +13,14 @@ logger.add(
 )
 
 logger.add(
-    sink="info.log",
+    sink="logs/info.log",
     format="{time: YYYY-MM-DD HH:mm:ss} | <r>{level}</r> | {module}:{function}:{line} | <g>{message}</g> {file}",
     level="INFO",
     rotation="10 MB",
 )
 
 logger.add(
-    sink="debug.log",
+    sink="logs/debug.log",
     format="{time: YYYY-MM-DD HH:mm:ss} | <r>{level}</r> | {module}:{function}:{line} | <g>{message}</g> {file}",
     level="DEBUG",
     rotation="10 MB",
