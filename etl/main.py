@@ -1,8 +1,10 @@
-import pandas as pd
+from extract import extract
+from unite import unite
 
 if __name__ == "__main__":
-    df = pd.read_parquet(
-        "C:\\Users\\levyv\\Desktop\\proj\\kaggle_extract\\data\\events.parquet"
+    extract(
+        "mkechinov/ecommerce-events-history-in-cosmetics-shop",
+        "../data/",
     )
 
-    print(df.head())
+    unite("../data/db.duckdb")
