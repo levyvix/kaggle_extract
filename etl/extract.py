@@ -1,6 +1,9 @@
 import os
+from decorators.utils import log_function, time_function
 
 
+@time_function
+@log_function
 def extract(dataset_name: str, download_path: str):
     return os.system(
         " ".join(

@@ -1,0 +1,8 @@
+2024-03-09T18:18:45.539827-0300 INFO Chamando função extract com argumentos: ('mkechinov/ecommerce-events-history-in-cosmetics-shop', '../data/'), kwargs: {} utils.py
+2024-03-09T18:20:15.532209-0300 INFO Função extract retornou: 0 utils.py
+2024-03-09T18:20:15.534180-0300 INFO Função extract demorou 89.99435353279114 segundos para ser executada utils.py
+2024-03-09T18:20:15.536177-0300 INFO Chamando função unite com argumentos: ('../data/db.duckdb',), kwargs: {} utils.py
+2024-03-09T18:21:48.476056-0300 INFO Função unite retornou: None utils.py
+2024-03-09T18:21:48.478055-0300 INFO Função unite demorou 92.94187808036804 segundos para ser executada utils.py
+2024-03-09T18:26:35.701716-0300 INFO Função unite_pl demorou 35.61388921737671 segundos para ser executada utils.py
+2024-03-09T18:29:04.394417-0300 INFO Função unite_pl demorou 25.620877027511597 segundos para ser executada utils.py

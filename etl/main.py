@@ -1,5 +1,5 @@
 from extract import extract
-from unite import unite
+from unite import unite_pl
 
 if __name__ == "__main__":
     extract(
@@ -7,4 +7,4 @@ if __name__ == "__main__":
         "../data/",
     )
 
-    unite("../data/db.duckdb")
+    unite_pl("../data/")

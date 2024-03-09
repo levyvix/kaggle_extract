@@ -4,25 +4,26 @@ from sys import stderr
 from functools import wraps
 
 
-logger.remove()
+# logger.remove()
 
 logger.add(
     sink=stderr,
     format="{time} <r>{level}</r> <g>{message}</g> {file}",
     level="INFO",
 )
+
 logger.add(
-    sink="loguru_demo.log",
+    sink="info.log",
     format="{time} <r>{level}</r> <g>{message}</g> {file}",
     level="INFO",
-    rotation="00:00",
+    rotation="10 MB",
 )
 
 logger.add(
-    sink="loguru_demo1.log",
+    sink="debug.log",
     format="{time} <r>{level}</r> <g>{message}</g> {file}",
     level="DEBUG",
-    rotation="00:00",
+    rotation="10 MB",
 )
 
 
@@ -46,6 +47,7 @@ def log_function(func):
     return wrapper
 
 
+@logger.catch
 def time_function(func):
     def wrapper(*args, **kwargs):
         start = time.time()
