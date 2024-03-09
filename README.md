@@ -9,23 +9,13 @@ Depois, instale a biblioteca kaggle para poder utilizar a API.
 pip install kaggle
 ```
 
-Agora, você pode utilizar a API para baixar os datasets do Kaggle.
-```python
-from kaggle.api.kaggle_api_extended import KaggleApi
+Agora precisa baixar [suas credenciais](https://www.kaggle.com/settings/account) (create new token) e colocar em `C:\Users\<usuário>\.kaggle\kaggle.json`.
 
-api = KaggleApi()
+Agora rode o projeto
 
-api.authenticate() # Autenticação
-
-api.dataset_download_files('shivan118/healthcare-analytics') # Download do dataset
+```bash
+cd etl
+python main.py
 ```
 
-Agora, você pode utilizar o dataset baixado para realizar suas análises.
-```python
-import pandas as pd
-
-df = pd.read_csv('healthcare-analytics.zip') # Leitura do dataset
-```
-
-Pronto! Agora você pode utilizar o dataset para realizar suas análises.
-```
+Os dados ficam disponiveis em `data/`
