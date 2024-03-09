@@ -1,6 +1,5 @@
 *.lock
 *.csv
 *.parquet
-*.duckdb
-*ipynb
+*.ipynb
 *.pyc

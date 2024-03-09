@@ -1,8 +1,8 @@
-import duckdb
 from decorators.utils import log_function, time_function
 import polars as pl
 
 
+@log_function
 @time_function
 def unite_pl(data_path: str = "../data"):
     pl.scan_csv(f"{data_path}/*.csv").sink_parquet(
