@@ -4,7 +4,6 @@ version = "0.1.0"
 description = ""
 authors = ["levyvix <levy.vix@gmail.com>"]
 readme = "README.md"
-package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -17,6 +16,7 @@ polars = "^0.20.14"
 matplotlib = "^3.8.3"
 seaborn = "^0.13.2"
 scipy = "^1.12.0"
+ipykernel = "^6.29.3"
 
 
 [tool.poetry.group.dev.dependencies]
