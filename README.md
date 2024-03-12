@@ -18,4 +18,11 @@ cd etl
 python main.py
 ```
 
+# IMPORTANTE
+
+Os dados de `brazil_population_2019.csv` tem um problema que impede que ele seja lido
+
+para resolver, precisa abrir o arquivo csv, ir na linha 1282 e apagar as colunas extras "Entorno...". Seleciona até a virgula, aperta Ctrl+h e clica em "replace all" (segunda caixinha)
+
+
 Os dados ficam disponiveis em `data/`
