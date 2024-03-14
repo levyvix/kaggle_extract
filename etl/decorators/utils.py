@@ -1,8 +1,8 @@
-from loguru import logger
 import time
-from sys import stderr, stdout
 from functools import wraps
+from sys import stdout
 
+from loguru import logger
 
 logger.remove()
 

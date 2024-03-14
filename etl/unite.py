@@ -1,5 +1,5 @@
-from decorators.utils import log_function, time_function
 import polars as pl
+from decorators.utils import log_function, time_function
 
 
 @log_function
