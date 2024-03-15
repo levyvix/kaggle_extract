@@ -24,6 +24,6 @@ def extract(dataset_name: str, download_path: str):
 
 if __name__ == "__main__":
     extract(
-        "mkechinov/ecommerce-events-history-in-cosmetics-shop",
+        "unanimad/corona-virus-brazil",
         "../data/",
     )

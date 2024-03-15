@@ -1,4 +1,4 @@
-# kaggle_extract
+# Kaggle Extract and Analysis
 
 # Como instalar as dependencias do projeto
 Primeiro, instale o [Poetry](https://python-poetry.org/), ele é usado em todo o projeto para gerenciar as dependencias
@@ -20,8 +20,10 @@ Agora rode o projeto
 
 ```bash
 cd etl
-python main.py
+python extract.py
 ```
+
+Com os dados baixados e extraídos, pode iniciar a analise.
 
 # IMPORTANTE
 
