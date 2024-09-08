@@ -1,10 +1,21 @@
-from extract import extract
+from extract import extract, clean_data
 from unite import unite_pl
 
-if __name__ == "__main__":
+
+def main():
     extract(
         "unanimad/corona-virus-brazil",
         "../data/",
     )
 
-    unite_pl("../data/")
+    clean_data("../data/")
+
+    unite_pl(
+        "../data/",
+    )
+
+    
+
+
+if __name__ == "__main__":
+    main()

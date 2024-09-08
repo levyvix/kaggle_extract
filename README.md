@@ -20,7 +20,7 @@ Agora rode o projeto
 
 ```bash
 cd etl
-python extract.py
+python main.py
 ```
 
 Com os dados baixados e extraídos, pode iniciar a analise.

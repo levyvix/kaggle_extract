@@ -1,0 +1,33 @@
+ 2024-09-08 17:05:37 | INFO | utils:wrapper:54 | Chamando função extract com argumentos: ('unanimad/corona-virus-brazil', '../data/'), kwargs: {} utils.py
+ 2024-09-08 17:05:37 | ERROR | utils:wrapper:54 | Exceção ao chamar a função extract: [WinError 3] O sistema não pode encontrar o caminho especificado: '../data/' utils.py
+Traceback (most recent call last):
+
+  File "c:\Users\levyv\git\kaggle_extract\etl\main.py", line 21, in <module>
+    main()
+    └ <function main at 0x00000202E6B5A340>
+
+  File "c:\Users\levyv\git\kaggle_extract\etl\main.py", line 6, in main
+    extract(
+    └ <function extract at 0x00000202E6F43F60>
+
+  File "c:\Users\levyv\git\kaggle_extract\etl\decorators\utils.py", line 54, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ ('unanimad/corona-virus-brazil', '../data/')
+             └ <function extract at 0x00000202E6EC3380>
+
+> File "c:\Users\levyv\git\kaggle_extract\etl\decorators\utils.py", line 38, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ ('unanimad/corona-virus-brazil', '../data/')
+             └ <function extract at 0x00000202E6E1DD00>
+
+  File "c:\Users\levyv\git\kaggle_extract\etl\extract.py", line 12, in extract
+    if not os.listdir(download_path):
+           │  │       └ '../data/'
+           │  └ <built-in function listdir>
+           └ <module 'os' (frozen)>
+
+FileNotFoundError: [WinError 3] O sistema não pode encontrar o caminho especificado: '../data/'
+ 2024-09-08 17:08:42 | INFO | utils:wrapper:54 | Chamando função extract com argumentos: ('unanimad/corona-virus-brazil', '../data/'), kwargs: {} utils.py
+ 2024-09-08 17:09:24 | INFO | utils:wrapper:54 | Chamando função extract com argumentos: ('unanimad/corona-virus-brazil', '../data/'), kwargs: {} utils.py

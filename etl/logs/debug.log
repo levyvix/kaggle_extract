@@ -238,3 +238,316 @@ polars.exceptions.ComputeError: no matching files found in ../data//*.csv
  2024-03-15 17:42:34 | INFO | utils:wrapper:54 | Chamando função extract com argumentos: ('unanimad/corona-virus-brazil', '../data/'), kwargs: {} utils.py
  2024-03-15 17:42:42 | INFO | utils:wrapper:54 | Função extract retornou: 0 utils.py
  2024-03-15 17:42:42 | INFO | utils:wrapper:56 | Função extract demorou 8.076979398727417 segundos para ser executada utils.py
+ 2024-09-08 16:44:55 | INFO | utils:wrapper:54 | Chamando função extract com argumentos: ('unanimad/corona-virus-brazil', '../data/'), kwargs: {} utils.py
+ 2024-09-08 16:45:03 | INFO | utils:wrapper:54 | Função extract retornou: 0 utils.py
+ 2024-09-08 16:45:03 | INFO | utils:wrapper:56 | Função extract demorou 7.480242013931274 segundos para ser executada utils.py
+ 2024-09-08 16:45:03 | INFO | main:main:12 | Chamando função unite_pl com argumentos: ('../data/', '../data/unite.parquet'), kwargs: {} main.py
+ 2024-09-08 16:45:03 | ERROR | main:main:12 | Exceção ao chamar a função unite_pl: unite_pl() takes from 0 to 1 positional arguments but 2 were given main.py
+Traceback (most recent call last):
+
+  File "C:\Users\levyv\git\kaggle_extract\etl\main.py", line 18, in <module>
+    main()
+    └ <function main at 0x000002193ED0A660>
+
+  File "C:\Users\levyv\git\kaggle_extract\etl\decorators\utils.py", line 54, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ ()
+             └ <function main at 0x000002193EA4A3E0>
+
+  File "C:\Users\levyv\git\kaggle_extract\etl\main.py", line 12, in main
+    unite_pl(
+    └ <function unite_pl at 0x0000021943E0F2E0>
+
+> File "C:\Users\levyv\git\kaggle_extract\etl\decorators\utils.py", line 38, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ ('../data/', '../data/unite.parquet')
+             └ <function unite_pl at 0x0000021943E0F060>
+
+  File "C:\Users\levyv\git\kaggle_extract\etl\decorators\utils.py", line 54, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ ('../data/', '../data/unite.parquet')
+             └ <function unite_pl at 0x0000021943E0F100>
+
+TypeError: unite_pl() takes from 0 to 1 positional arguments but 2 were given
+ 2024-09-08 16:45:34 | INFO | utils:wrapper:54 | Chamando função extract com argumentos: ('unanimad/corona-virus-brazil', '../data/'), kwargs: {} utils.py
+ 2024-09-08 16:45:40 | INFO | utils:wrapper:54 | Função extract retornou: 0 utils.py
+ 2024-09-08 16:45:40 | INFO | utils:wrapper:56 | Função extract demorou 6.026504278182983 segundos para ser executada utils.py
+ 2024-09-08 16:45:40 | INFO | main:main:12 | Chamando função unite_pl com argumentos: ('../data/',), kwargs: {} main.py
+ 2024-09-08 16:45:40 | ERROR | main:main:12 | Exceção ao chamar a função unite_pl: schema lengths differ
+
+This error occurred with the following context stack:
+	[1] 'csv scan' failed
+	[2] 'sink' input failed to resolve
+ main.py
+Traceback (most recent call last):
+
+  File "C:\Users\levyv\git\kaggle_extract\etl\main.py", line 17, in <module>
+    main()
+    └ <function main at 0x000002707B4D8E00>
+
+  File "C:\Users\levyv\git\kaggle_extract\etl\decorators\utils.py", line 54, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ ()
+             └ <function main at 0x000002707B1EA3E0>
+
+  File "C:\Users\levyv\git\kaggle_extract\etl\main.py", line 12, in main
+    unite_pl(
+    └ <function unite_pl at 0x000002707F39AE80>
+
+> File "C:\Users\levyv\git\kaggle_extract\etl\decorators\utils.py", line 38, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ ('../data/',)
+             └ <function unite_pl at 0x000002707F39AD40>
+
+  File "C:\Users\levyv\git\kaggle_extract\etl\decorators\utils.py", line 54, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ ('../data/',)
+             └ <function unite_pl at 0x000002707F39ACA0>
+
+  File "C:\Users\levyv\git\kaggle_extract\etl\unite.py", line 8, in unite_pl
+    pl.scan_csv(f"{data_path}/*.csv").sink_parquet(
+    │  │           └ '../data/'
+    │  └ <function scan_csv at 0x000002707F726520>
+    └ <module 'polars' from 'C:\\Users\\levyv\\git\\kaggle_extract\\.venv\\Lib\\site-packages\\polars\\__init__.py'>
+
+  File "C:\Users\levyv\git\kaggle_extract\.venv\Lib\site-packages\polars\_utils\unstable.py", line 59, in wrapper
+    return function(*args, **kwargs)
+           │         │       └ {'compression': 'snappy'}
+           │         └ (<LazyFrame at 0x2707EA882C0>, '../data//events.parquet')
+           └ <function LazyFrame.sink_parquet at 0x000002707F5E3EC0>
+  File "C:\Users\levyv\git\kaggle_extract\.venv\Lib\site-packages\polars\lazyframe\frame.py", line 2228, in sink_parquet
+    return lf.sink_parquet(
+           │  └ <method 'sink_parquet' of 'builtins.PyLazyFrame' objects>
+           └ <builtins.PyLazyFrame object at 0x00000270001B9090>
+
+polars.exceptions.ComputeError: schema lengths differ
+
+This error occurred with the following context stack:
+	[1] 'csv scan' failed
+	[2] 'sink' input failed to resolve
+
+ 2024-09-08 16:46:34 | INFO | utils:wrapper:54 | Chamando função extract com argumentos: ('unanimad/corona-virus-brazil', '../data/'), kwargs: {} utils.py
+ 2024-09-08 16:46:41 | INFO | utils:wrapper:54 | Função extract retornou: 0 utils.py
+ 2024-09-08 16:46:41 | INFO | utils:wrapper:56 | Função extract demorou 6.293384790420532 segundos para ser executada utils.py
+ 2024-09-08 16:46:41 | INFO | main:main:12 | Chamando função unite_pl com argumentos: ('../data/',), kwargs: {} main.py
+ 2024-09-08 16:46:41 | ERROR | main:main:12 | Exceção ao chamar a função unite_pl: could not parse ` Entorno e Alto Rio Negro` as dtype `i64` at column 'population' (column number 8)
+
+The current offset in the file is 88935 bytes.
+
+You might want to try:
+- increasing `infer_schema_length` (e.g. `infer_schema_length=10000`),
+- specifying correct dtype with the `dtypes` argument
+- setting `ignore_errors` to `True`,
+- adding ` Entorno e Alto Rio Negro` to the `null_values` list.
+
+Original error: ```remaining bytes non-empty``` main.py
+Traceback (most recent call last):
+
+  File "C:\Users\levyv\git\kaggle_extract\etl\main.py", line 17, in <module>
+    main()
+    └ <function main at 0x0000026227268E00>
+
+  File "C:\Users\levyv\git\kaggle_extract\etl\decorators\utils.py", line 54, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ ()
+             └ <function main at 0x0000026226FAA3E0>
+
+  File "C:\Users\levyv\git\kaggle_extract\etl\main.py", line 12, in main
+    unite_pl(
+    └ <function unite_pl at 0x000002622B05AE80>
+
+> File "C:\Users\levyv\git\kaggle_extract\etl\decorators\utils.py", line 38, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ ('../data/',)
+             └ <function unite_pl at 0x000002622B05ACA0>
+
+  File "C:\Users\levyv\git\kaggle_extract\etl\decorators\utils.py", line 54, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ ('../data/',)
+             └ <function unite_pl at 0x000002622B05AD40>
+
+  File "C:\Users\levyv\git\kaggle_extract\etl\unite.py", line 8, in unite_pl
+    pl.scan_csv(f"{data_path}/brazil_population_2019.csv").sink_parquet(
+    │  │           └ '../data/'
+    │  └ <function scan_csv at 0x000002622C3B6520>
+    └ <module 'polars' from 'C:\\Users\\levyv\\git\\kaggle_extract\\.venv\\Lib\\site-packages\\polars\\__init__.py'>
+
+  File "C:\Users\levyv\git\kaggle_extract\.venv\Lib\site-packages\polars\_utils\unstable.py", line 59, in wrapper
+    return function(*args, **kwargs)
+           │         │       └ {'compression': 'snappy'}
+           │         └ (<LazyFrame at 0x2622AE502C0>, '../data//brazil_population_2019.parquet')
+           └ <function LazyFrame.sink_parquet at 0x000002622C273EC0>
+  File "C:\Users\levyv\git\kaggle_extract\.venv\Lib\site-packages\polars\lazyframe\frame.py", line 2228, in sink_parquet
+    return lf.sink_parquet(
+           │  └ <method 'sink_parquet' of 'builtins.PyLazyFrame' objects>
+           └ <builtins.PyLazyFrame object at 0x000002622B426400>
+
+polars.exceptions.ComputeError: could not parse ` Entorno e Alto Rio Negro` as dtype `i64` at column 'population' (column number 8)
+
+The current offset in the file is 88935 bytes.
+
+You might want to try:
+- increasing `infer_schema_length` (e.g. `infer_schema_length=10000`),
+- specifying correct dtype with the `dtypes` argument
+- setting `ignore_errors` to `True`,
+- adding ` Entorno e Alto Rio Negro` to the `null_values` list.
+
+Original error: ```remaining bytes non-empty```
+ 2024-09-08 16:48:40 | INFO | utils:wrapper:54 | Chamando função extract com argumentos: ('unanimad/corona-virus-brazil', '../data/'), kwargs: {} utils.py
+ 2024-09-08 16:48:40 | INFO | utils:wrapper:54 | Função extract retornou: None utils.py
+ 2024-09-08 16:48:40 | INFO | utils:wrapper:56 | Função extract demorou 0.00099945068359375 segundos para ser executada utils.py
+ 2024-09-08 16:48:40 | INFO | main:main:10 | Chamando função unite_pl com argumentos: ('../data/',), kwargs: {} main.py
+ 2024-09-08 16:48:40 | ERROR | main:main:10 | Exceção ao chamar a função unite_pl: could not parse ` Entorno e Alto Rio Negro` as dtype `i64` at column 'population' (column number 8)
+
+The current offset in the file is 88935 bytes.
+
+You might want to try:
+- increasing `infer_schema_length` (e.g. `infer_schema_length=10000`),
+- specifying correct dtype with the `dtypes` argument
+- setting `ignore_errors` to `True`,
+- adding ` Entorno e Alto Rio Negro` to the `null_values` list.
+
+Original error: ```remaining bytes non-empty``` main.py
+Traceback (most recent call last):
+
+  File "C:\Users\levyv\git\kaggle_extract\etl\main.py", line 16, in <module>
+    main()
+    └ <function main at 0x000001A2C460A3E0>
+
+  File "C:\Users\levyv\git\kaggle_extract\etl\main.py", line 10, in main
+    unite_pl(
+    └ <function unite_pl at 0x000001A2C87EAE80>
+
+> File "C:\Users\levyv\git\kaggle_extract\etl\decorators\utils.py", line 38, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ ('../data/',)
+             └ <function unite_pl at 0x000001A2C87EAD40>
+
+  File "C:\Users\levyv\git\kaggle_extract\etl\decorators\utils.py", line 54, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ ('../data/',)
+             └ <function unite_pl at 0x000001A2C87EACA0>
+
+  File "C:\Users\levyv\git\kaggle_extract\etl\unite.py", line 8, in unite_pl
+    pl.scan_csv(f"{data_path}/brazil_population_2019.csv").sink_parquet(
+    │  │           └ '../data/'
+    │  └ <function scan_csv at 0x000001A2C9B46520>
+    └ <module 'polars' from 'C:\\Users\\levyv\\git\\kaggle_extract\\.venv\\Lib\\site-packages\\polars\\__init__.py'>
+
+  File "C:\Users\levyv\git\kaggle_extract\.venv\Lib\site-packages\polars\_utils\unstable.py", line 59, in wrapper
+    return function(*args, **kwargs)
+           │         │       └ {'compression': 'snappy'}
+           │         └ (<LazyFrame at 0x1A2C87B4EC0>, '../data//brazil_population_2019.parquet')
+           └ <function LazyFrame.sink_parquet at 0x000001A2C9A03EC0>
+  File "C:\Users\levyv\git\kaggle_extract\.venv\Lib\site-packages\polars\lazyframe\frame.py", line 2228, in sink_parquet
+    return lf.sink_parquet(
+           │  └ <method 'sink_parquet' of 'builtins.PyLazyFrame' objects>
+           └ <builtins.PyLazyFrame object at 0x000001A2C79D6F10>
+
+polars.exceptions.ComputeError: could not parse ` Entorno e Alto Rio Negro` as dtype `i64` at column 'population' (column number 8)
+
+The current offset in the file is 88935 bytes.
+
+You might want to try:
+- increasing `infer_schema_length` (e.g. `infer_schema_length=10000`),
+- specifying correct dtype with the `dtypes` argument
+- setting `ignore_errors` to `True`,
+- adding ` Entorno e Alto Rio Negro` to the `null_values` list.
+
+Original error: ```remaining bytes non-empty```
+ 2024-09-08 16:52:49 | INFO | utils:wrapper:54 | Chamando função extract com argumentos: ('unanimad/corona-virus-brazil', '../data/'), kwargs: {} utils.py
+ 2024-09-08 16:52:49 | INFO | utils:wrapper:54 | Função extract retornou: None utils.py
+ 2024-09-08 16:52:49 | INFO | utils:wrapper:56 | Função extract demorou 0.0010068416595458984 segundos para ser executada utils.py
+ 2024-09-08 16:52:49 | INFO | main:main:10 | Chamando função unite_pl com argumentos: ('../data/',), kwargs: {} main.py
+ 2024-09-08 16:52:49 | INFO | utils:wrapper:56 | Função unite_pl demorou 0.010513067245483398 segundos para ser executada utils.py
+ 2024-09-08 16:52:49 | INFO | main:main:10 | Função unite_pl retornou: None main.py
+ 2024-09-08 16:55:06 | INFO | utils:wrapper:54 | Chamando função extract com argumentos: ('unanimad/corona-virus-brazil', '../data/'), kwargs: {} utils.py
+ 2024-09-08 16:55:11 | INFO | utils:wrapper:54 | Função extract retornou: 0 utils.py
+ 2024-09-08 16:55:11 | INFO | utils:wrapper:56 | Função extract demorou 5.598822116851807 segundos para ser executada utils.py
+ 2024-09-08 16:55:11 | INFO | main:main:10 | Chamando função unite_pl com argumentos: ('../data/',), kwargs: {} main.py
+ 2024-09-08 16:55:11 | ERROR | main:main:10 | Exceção ao chamar a função unite_pl: could not parse ` Entorno e Alto Rio Negro` as dtype `i64` at column 'population' (column number 8)
+
+The current offset in the file is 88935 bytes.
+
+You might want to try:
+- increasing `infer_schema_length` (e.g. `infer_schema_length=10000`),
+- specifying correct dtype with the `dtypes` argument
+- setting `ignore_errors` to `True`,
+- adding ` Entorno e Alto Rio Negro` to the `null_values` list.
+
+Original error: ```remaining bytes non-empty``` main.py
+Traceback (most recent call last):
+
+  File "C:\Users\levyv\git\kaggle_extract\etl\main.py", line 16, in <module>
+    main()
+    └ <function main at 0x000001F39803A3E0>
+
+  File "C:\Users\levyv\git\kaggle_extract\etl\main.py", line 10, in main
+    unite_pl(
+    └ <function unite_pl at 0x000001F39C14AE80>
+
+> File "C:\Users\levyv\git\kaggle_extract\etl\decorators\utils.py", line 38, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ ('../data/',)
+             └ <function unite_pl at 0x000001F39C14AD40>
+
+  File "C:\Users\levyv\git\kaggle_extract\etl\decorators\utils.py", line 54, in wrapper
+    result = func(*args, **kwargs)
+             │     │       └ {}
+             │     └ ('../data/',)
+             └ <function unite_pl at 0x000001F39C14ACA0>
+
+  File "C:\Users\levyv\git\kaggle_extract\etl\unite.py", line 8, in unite_pl
+    pl.scan_csv(f"{data_path}/brazil_population_2019.csv").sink_parquet(
+    │  │           └ '../data/'
+    │  └ <function scan_csv at 0x000001F39D4A6520>
+    └ <module 'polars' from 'C:\\Users\\levyv\\git\\kaggle_extract\\.venv\\Lib\\site-packages\\polars\\__init__.py'>
+
+  File "C:\Users\levyv\git\kaggle_extract\.venv\Lib\site-packages\polars\_utils\unstable.py", line 59, in wrapper
+    return function(*args, **kwargs)
+           │         │       └ {'compression': 'snappy'}
+           │         └ (<LazyFrame at 0x1F398308800>, '../data//brazil_population_2019.parquet')
+           └ <function LazyFrame.sink_parquet at 0x000001F39D363EC0>
+  File "C:\Users\levyv\git\kaggle_extract\.venv\Lib\site-packages\polars\lazyframe\frame.py", line 2228, in sink_parquet
+    return lf.sink_parquet(
+           │  └ <method 'sink_parquet' of 'builtins.PyLazyFrame' objects>
+           └ <builtins.PyLazyFrame object at 0x000001F39C5513A0>
+
+polars.exceptions.ComputeError: could not parse ` Entorno e Alto Rio Negro` as dtype `i64` at column 'population' (column number 8)
+
+The current offset in the file is 88935 bytes.
+
+You might want to try:
+- increasing `infer_schema_length` (e.g. `infer_schema_length=10000`),
+- specifying correct dtype with the `dtypes` argument
+- setting `ignore_errors` to `True`,
+- adding ` Entorno e Alto Rio Negro` to the `null_values` list.
+
+Original error: ```remaining bytes non-empty```
+ 2024-09-08 17:05:09 | INFO | utils:wrapper:54 | Chamando função extract com argumentos: ('unanimad/corona-virus-brazil', '../data/'), kwargs: {} utils.py
+ 2024-09-08 17:05:10 | INFO | utils:wrapper:54 | Função extract retornou: 1 utils.py
+ 2024-09-08 17:05:10 | INFO | utils:wrapper:56 | Função extract demorou 0.025063037872314453 segundos para ser executada utils.py
+ 2024-09-08 17:06:06 | INFO | utils:wrapper:54 | Chamando função extract com argumentos: ('unanimad/corona-virus-brazil', '../data/'), kwargs: {} utils.py
+ 2024-09-08 17:06:06 | INFO | utils:wrapper:54 | Função extract retornou: 1 utils.py
+ 2024-09-08 17:06:06 | INFO | utils:wrapper:56 | Função extract demorou 0.015516281127929688 segundos para ser executada utils.py
+ 2024-09-08 17:07:35 | INFO | utils:wrapper:54 | Chamando função extract com argumentos: ('unanimad/corona-virus-brazil', '../data/'), kwargs: {} utils.py
+ 2024-09-08 17:07:35 | INFO | utils:wrapper:54 | Função extract retornou: None utils.py
+ 2024-09-08 17:07:35 | INFO | utils:wrapper:56 | Função extract demorou 0.01602959632873535 segundos para ser executada utils.py
+ 2024-09-08 17:10:45 | INFO | utils:wrapper:54 | Chamando função extract com argumentos: ('unanimad/corona-virus-brazil', '../data/'), kwargs: {} utils.py
+ 2024-09-08 17:10:51 | INFO | utils:wrapper:54 | Função extract retornou: None utils.py
+ 2024-09-08 17:10:51 | INFO | utils:wrapper:56 | Função extract demorou 5.765966176986694 segundos para ser executada utils.py
+ 2024-09-08 17:10:51 | INFO | main:main:13 | Chamando função unite_pl com argumentos: ('../data/',), kwargs: {} main.py
+ 2024-09-08 17:10:51 | INFO | utils:wrapper:56 | Função unite_pl demorou 0.02405238151550293 segundos para ser executada utils.py
+ 2024-09-08 17:10:51 | INFO | main:main:13 | Função unite_pl retornou: None main.py
