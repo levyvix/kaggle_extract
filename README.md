@@ -8,7 +8,6 @@ pip install poetry
 
 Agora, com o `poetry` instalado precisa instalar os pacotes que estão em `pyproject.toml` e criar um ambiente virtual
 ```bash
-poetry shell
 poetry install
 ```
 
@@ -20,15 +19,7 @@ Agora rode o projeto
 
 ```bash
 cd etl
-python main.py
+poetry run python main.py
 ```
 
 Com os dados baixados e extraídos, pode iniciar a analise.
-
-# IMPORTANTE
-
-Os dados de `brazil_population_2019.csv` tem um problema que impede que ele seja lido
-
-para resolver, precisa abrir o arquivo csv, ir na linha 1282 e apagar as colunas extras "Entorno...". Seleciona até a virgula, aperta Ctrl+h e clica em "replace all" (segunda caixinha)
-
-Os dados ficam disponiveis em `data/`
